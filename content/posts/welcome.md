@@ -1,7 +1,7 @@
 ---
 title: "Welcome"
 date: 2021-01-26T16:36:13+02:00
-draft: true
+draft: false
 ---
 
 Welcome to my new blog where I am going to start documenting my code adventures in more detail.
