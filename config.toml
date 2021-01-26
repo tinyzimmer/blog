@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "tinyzimmer's blog"
+theme = "clarity"
+enableEmoji = true
+
+[params]
+footerLogo = ""
