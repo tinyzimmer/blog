@@ -6,3 +6,4 @@ enableEmoji = true
 
 [params]
 footerLogo = ""
+codeLineNumbers = true
