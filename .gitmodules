@@ -1,6 +1,7 @@
-[submodule "themes/clarity"]
-	path = themes/clarity
-	url = https://github.com/chipzoller/hugo-clarity.git
 [submodule "public"]
 	path = public
 	url = git@github.com:tinyzimmer/tinyzimmer.github.io
+
+[submodule "themes/HugoTheme-VibrantShadows"]
+	path = themes/HugoTheme-VibrantShadows
+	url = https://github.com/Softorage/HugoTheme-VibrantShadows.git

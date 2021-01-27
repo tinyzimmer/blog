@@ -1,9 +1,0 @@
-baseURL = "https://tinyzimmer.github.io/"
-languageCode = "en-us"
-title = "tinyzimmer's blog"
-theme = "clarity"
-enableEmoji = true
-
-[params]
-footerLogo = ""
-codeLineNumbers = true

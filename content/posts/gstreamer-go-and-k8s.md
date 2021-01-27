@@ -2,6 +2,8 @@
 title: "GStreamer, Go and Kubernetes"
 date: 2021-01-27T06:54:29+02:00
 draft: false
+tags: ["kubernetes", "go", "gstreamer"]
+image: "/images/music-gopher.png"
 ---
 
 Back when I was working on [kvdi](https://github.com/tinyzimmer/kvdi) (a Kubernetes-native "Virtual Desktop Infrastructure" written in Go), I got to the inevitable point that I wanted support for audio streams from the user desktops.
@@ -343,7 +345,14 @@ The additional fields on the *CustomResource* for debugging tell the runner (in 
 
 I recognize you may need to download and zoom to properly view the contents of the image.
 
-![:inline](/images/gstreamer-pipeline-operator-dot.png)
+
+<div class="pipeline-img">
+  <input type="checkbox" id="zoomCheck">
+  <label for="zoomCheck">
+    <img src="/images/gstreamer-pipeline-operator-dot.png">
+  </label>
+</div>
+
 
 We can see here that the MKV I dropped actually already contained H264 video. So we essentially converted it RAW, straight back into H264, and then just slapped it into a different container.
 But the important thing is that all the linking (both static and dynamic) happened correctly!.

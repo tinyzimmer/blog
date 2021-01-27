@@ -1,0 +1,43 @@
+baseURL: "https://tinyzimmer.github.io/"
+languageCode: "en-us"
+title: "tinyzimmer's blog"
+theme: "HugoTheme-VibrantShadows"
+enableEmoji: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 1
+
+params:
+  meta:
+    author: "Avi Zimmerman"
+    tagline: "tinyzimmer's blog"
+    description: "A blog where I document my journeys through automation and code"
+    attribution: disable
+  theme:
+    clr1: "#0080ff"
+    clr2: grey
+  social:
+    profiles:
+      github: "https://github.com/tinyzimmer"
+  faviconTags: |
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.BaseURL }}/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.BaseURL }}/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.BaseURL }}/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ site.BaseURL }}/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ site.BaseURL }}/assets/favicon/safari-pinned-tab.svg" color="#7817c4">
+    <link rel="icon" href="{{ site.BaseURL }}/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.BaseURL }}/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css" />
+    <meta name="apple-mobile-web-app-title" content="Vibrant Shadows Theme">
+    <meta name="application-name" content="Vibrant Shadows Theme">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">

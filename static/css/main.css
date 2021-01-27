@@ -1,0 +1,16 @@
+input[type=checkbox] {
+    display: none;
+}
+
+.container img {
+    max-width: 100%;
+    margin: 100px;
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
+    transform-origin: left;
+}
+
+input[type=checkbox]:checked ~ label > img {
+    transform: scale(6);
+    cursor: zoom-out;
+}
