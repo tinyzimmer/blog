@@ -141,7 +141,7 @@ The `pipelineCfg` is populated with the deserialized contents of the `elements` 
 We then make our source MinIO element pointing at the object that triggered this pipeline and add it to the *GstPipeline*.
 
 Now is where things begin to get exciting. We need to iterate the element configurations provided by the user, and link them up properly in the pipeline.
-We also need to take into account that the user may have defined elements that are providing dynamic sink pads and can't be linked right away, and we'll get more into that later.
+We also need to take into account that the user may have defined elements that are providing dynamic src pads and can't be linked right away, and we'll get more into that later.
 
 To start, we'll declare some pointers outside of the scope of the `for` loop we are about to do.
 
