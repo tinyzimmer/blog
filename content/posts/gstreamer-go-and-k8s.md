@@ -1,7 +1,7 @@
 ---
 title: "GStreamer, Go and Kubernetes"
 date: 2021-01-27T06:54:29+02:00
-draft: true
+draft: false
 ---
 
 Back when I was working on [kvdi](https://github.com/tinyzimmer/kvdi) (a Kubernetes-native "Virtual Desktop Infrastructure" written in Go), I got to the inevitable point that I wanted support for audio streams from the user desktops.
