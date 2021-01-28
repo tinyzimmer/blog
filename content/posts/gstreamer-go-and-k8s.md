@@ -1,9 +1,11 @@
 ---
-title: "GStreamer, Go and Kubernetes"
+title: "GStreamer, Go, and Kubernetes"
 date: 2021-01-27T06:54:29+02:00
 draft: false
 tags: ["kubernetes", "go", "gstreamer"]
 image: "/images/music-gopher.png"
+---
+
 ---
 
 Back when I was working on [kvdi](https://github.com/tinyzimmer/kvdi) (a Kubernetes-native "Virtual Desktop Infrastructure" written in Go), I got to the inevitable point that I wanted support for audio streams from the user desktops.
@@ -18,7 +20,7 @@ In a web-based VDI solution, this posed several challenges:
 
 In another blog post I may go over these challenges and how I was able to overcome them in implementation, but that is not the purpose of this article.
 For now, what's important is that PulseAudio, GStreamer, webm/opus, and websockets saved the day. 
-The first implementation was accomplished entirely through subprocesses and redirecting shell pipes, but this is a poor way to write code and an almost insulting way to utilize the true power of the GStreamer API.
+The first implementation was accomplished entirely through subprocesses and redirecting shell pipes, but this is a poor way to write code and an almost insulting way to utilize the true power of the GStreamer API :stuck_out_tongue:.
 
 Unfortunately, there didn't exist any truly comprehensive and feature-complete Go bindings for GStreamer, or at least any that implemented all of the APIs I needed to accomplish my goal. And so, [go-gst](https://github.com/tinyzimmer/go-gst), and later [go-glib](https://github.com/tinyzimmer/go-glib) were forked and born.
 I started from the excellent work done by the [gotk3 project](https://github.com/gotk3/gotk3), and then saw the rest of the GStreamer API bindings to pseudo-completion (these bindings remain actively developed with some help starting to come in from the community).
@@ -267,9 +269,10 @@ The other piece we want to explore is `linkLast`. Most elements in GStreamer pro
 directly while the pipeline is being built. In the go bindings, this is as simple as calling `last.Link(this)`. 
 However, and in our example above as well, there are some elements that provide dynamic pads. In the example above this is the `decodebin` element.
 I won't get into the full nitty-gritty of the magic happening underneath the hood in `decodebin`, but what's important for now is that when it is first created
-it has no idea what sort of output it will be generating.
+it has no idea what sort of input it will be getting. After the stream has started it attempts to detect the formats it received, dynamically creates the necessary
+decoding/demuxing elements, and then provides a src pad once it has linked its own elements internally.
 
-Instead it produces signals once it has found pads it can provide, and the application can tap into those signals with callbacks to do dynamic linking at playtime.
+It produces signals once it has set up pads it can provide, and the application can tap into those signals with callbacks to do dynamic linking at playtime.
 With that in mind, let's look at the code.
 
 ```go

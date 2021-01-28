@@ -3,6 +3,11 @@ languageCode: "en-us"
 title: "tinyzimmer's blog"
 theme: "HugoTheme-VibrantShadows"
 enableEmoji: true
+taxonomies:
+  tag: "tags"
+
+build:
+  writeStats: true
 
 markup:
   goldmark:
@@ -17,6 +22,17 @@ menu:
       weight: 1
 
 params:
+  position:
+    social:
+      profiles: "navbar"
+      share: "top"
+    postMeta:
+      readingTime:
+        summary: "bottom"
+        content: "top"
+      tags:
+        summary: "top"
+        content: "bottom"
   meta:
     author: "Avi Zimmerman"
     tagline: "tinyzimmer's blog"
